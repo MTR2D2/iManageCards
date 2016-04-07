@@ -1,26 +1,75 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g3z-2r-SiR">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Cards List Table View Controller-->
+        <scene sceneID="uq5-XP-bYc">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iManageCards" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <tableViewController id="hMF-IL-4gU" customClass="CardsListTableViewController" customModule="iManageCards" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LwJ-Jr-PDr">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" red="0.12549019607843137" green="0.63921568627450975" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardCell" rowHeight="88" id="znu-WB-lWf" customClass="CardCell" customModule="iManageCards" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="400" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="znu-WB-lWf" id="9oY-UL-Ip1">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="87.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjF-AL-gjl">
+                                            <rect key="frame" x="24" y="12" width="352" height="63.5"/>
+                                            <color key="backgroundColor" red="0.97647058823529409" green="0.96862745098039216" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TjF-AL-gjl" firstAttribute="leading" secondItem="9oY-UL-Ip1" secondAttribute="leadingMargin" constant="16" id="5vI-85-s1H"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="TjF-AL-gjl" secondAttribute="trailing" constant="16" id="b3J-Hx-3WZ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="TjF-AL-gjl" secondAttribute="bottom" constant="4" id="lXK-Kp-d7L"/>
+                                        <constraint firstItem="TjF-AL-gjl" firstAttribute="top" secondItem="9oY-UL-Ip1" secondAttribute="topMargin" constant="4" id="oBc-CO-Z7e"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.12549019607843137" green="0.63921568627450975" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="cardView" destination="TjF-AL-gjl" id="fUe-N6-mJF"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hMF-IL-4gU" id="fVh-WC-sUf"/>
+                            <outlet property="delegate" destination="hMF-IL-4gU" id="fJz-ZA-o1W"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="5Nn-Kc-ahs"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="600"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KEO-cO-OmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1822" y="7"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7qr-M6-fT6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g3z-2r-SiR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KOt-Zv-CUU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hMF-IL-4gU" kind="relationship" relationship="rootViewController" id="FkP-dF-YLw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0LC-Pf-5U2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010" y="7"/>
         </scene>
     </scenes>
 </document>

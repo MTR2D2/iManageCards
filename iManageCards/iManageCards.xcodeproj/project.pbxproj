@@ -13,6 +13,7 @@
 		4C24F0ED1C9671AE00862132 /* iManageCards.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C24F0EB1C9671AE00862132 /* iManageCards.xcdatamodeld */; };
 		4C24F0EF1C9671AE00862132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C24F0EE1C9671AE00862132 /* Assets.xcassets */; };
 		4C24F0F21C9671AE00862132 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C24F0F01C9671AE00862132 /* LaunchScreen.storyboard */; };
+		639498AC1CB6C94D001E72E3 /* CardsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639498AB1CB6C94D001E72E3 /* CardsListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4C24F0EE1C9671AE00862132 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C24F0F11C9671AE00862132 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C24F0F31C9671AE00862132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		639498AB1CB6C94D001E72E3 /* CardsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				4C24F0E61C9671AE00862132 /* ViewController.swift */,
+				639498AB1CB6C94D001E72E3 /* CardsListTableViewController.swift */,
 				4C24F0E81C9671AE00862132 /* Main.storyboard */,
 				4C24F0F91C9671C200862132 /* Misc */,
 			);
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C24F0E71C9671AE00862132 /* ViewController.swift in Sources */,
+				639498AC1CB6C94D001E72E3 /* CardsListTableViewController.swift in Sources */,
 				4C24F0E51C9671AE00862132 /* AppDelegate.swift in Sources */,
 				4C24F0ED1C9671AE00862132 /* iManageCards.xcdatamodeld in Sources */,
 			);
@@ -296,6 +300,7 @@
 				4C24F0F81C9671AE00862132 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
