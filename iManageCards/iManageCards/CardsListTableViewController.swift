@@ -17,6 +17,8 @@ class CardsListTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    tableView.separatorStyle = .None
+    
     if cards == nil {
       cards = NSMutableArray()
     }
@@ -31,6 +33,8 @@ class CardsListTableViewController: UITableViewController {
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("CardCell", forIndexPath: indexPath) as! CardCell
 
+    cell.animateSelection(indexPath == selectedIndex)
+    
     return cell
   }
 
@@ -42,16 +46,13 @@ class CardsListTableViewController: UITableViewController {
       selectedIndex = NSIndexPath()
     }
     
-    
     tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-    
-    
   }
   
   override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     
     switch indexPath {
-    case selectedIndex: return 176
+    case selectedIndex: return 222
     default: return 88
     }
   }
@@ -64,19 +65,42 @@ class CardCell: UITableViewCell {
   
   @IBOutlet weak var cardView: UIView!
   
+  @IBOutlet weak var selectedCardView: UIView!
+  @IBOutlet weak var deselectedCardView: UIView!
+  
   override func awakeFromNib() {
     cardView.layer.cornerRadius = cornerRadius
+    cardView.layer.masksToBounds = true
     selectionStyle = .None
   }
   
-  override func layoutIfNeeded() {
-    animateLayout()
+  func animateSelection(selected: Bool) {
     
-    cardView.animateOpacity(.FadeOut) { 
-      self.cardView.animateOpacity(.FadeIn, completionHandler: nil)
+//    self.animateLayout()
+    
+    switch selected {
+    case true: showSelectedView()
+    case false: showDeselectedView()
     }
   }
   
+  func showSelectedView() {
+    deselectedCardView.animateOpacity(.FadeOut) { 
+      self.selectedCardView.animateOpacity(.FadeIn, completionHandler: nil)
+    }
+    
+    deselectedCardView.hidden = true
+    selectedCardView.hidden = false
+  }
+  
+  func showDeselectedView() {
+    selectedCardView.animateOpacity(.FadeOut) { 
+      self.deselectedCardView.animateOpacity(.FadeIn, completionHandler: nil)
+    }
+    
+    deselectedCardView.hidden = false
+    selectedCardView.hidden = true
+  }
   
 }
 

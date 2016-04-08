@@ -24,7 +24,51 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjF-AL-gjl">
                                             <rect key="frame" x="24" y="12" width="352" height="63.5"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWA-x6-jmI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="352" height="63.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deselected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iox-KZ-3ce">
+                                                            <rect key="frame" x="132.5" y="21.5" width="87" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.97647058823529409" green="0.96862745098039216" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="iox-KZ-3ce" firstAttribute="centerX" secondItem="RWA-x6-jmI" secondAttribute="centerX" id="oXA-Vp-cKC"/>
+                                                        <constraint firstItem="iox-KZ-3ce" firstAttribute="centerY" secondItem="RWA-x6-jmI" secondAttribute="centerY" id="qRO-WW-lMq"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSw-gO-ORv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="352" height="63.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlF-zA-WMy">
+                                                            <rect key="frame" x="142" y="21.5" width="67.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.97647058823529409" green="0.96862745098039216" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="wlF-zA-WMy" firstAttribute="centerX" secondItem="VSw-gO-ORv" secondAttribute="centerX" id="0GE-TU-zSp"/>
+                                                        <constraint firstItem="wlF-zA-WMy" firstAttribute="centerY" secondItem="VSw-gO-ORv" secondAttribute="centerY" id="sv5-Aj-6YY"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
                                             <color key="backgroundColor" red="0.97647058823529409" green="0.96862745098039216" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="RWA-x6-jmI" firstAttribute="height" secondItem="TjF-AL-gjl" secondAttribute="height" id="4Ks-zv-7gI"/>
+                                                <constraint firstItem="VSw-gO-ORv" firstAttribute="centerX" secondItem="TjF-AL-gjl" secondAttribute="centerX" id="884-E5-XvY"/>
+                                                <constraint firstItem="RWA-x6-jmI" firstAttribute="width" secondItem="TjF-AL-gjl" secondAttribute="width" id="JTX-jH-hAV"/>
+                                                <constraint firstItem="RWA-x6-jmI" firstAttribute="centerY" secondItem="TjF-AL-gjl" secondAttribute="centerY" id="LYW-60-sPy"/>
+                                                <constraint firstItem="VSw-gO-ORv" firstAttribute="width" secondItem="TjF-AL-gjl" secondAttribute="width" id="Xgy-sf-JSe"/>
+                                                <constraint firstItem="RWA-x6-jmI" firstAttribute="centerX" secondItem="TjF-AL-gjl" secondAttribute="centerX" id="aCs-Qg-PPR"/>
+                                                <constraint firstItem="VSw-gO-ORv" firstAttribute="centerY" secondItem="TjF-AL-gjl" secondAttribute="centerY" id="muP-EQ-1aT"/>
+                                                <constraint firstItem="VSw-gO-ORv" firstAttribute="height" secondItem="TjF-AL-gjl" secondAttribute="height" id="zIG-cO-QIF"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
@@ -37,6 +81,8 @@
                                 <color key="backgroundColor" red="0.12549019607843137" green="0.63921568627450975" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="cardView" destination="TjF-AL-gjl" id="fUe-N6-mJF"/>
+                                    <outlet property="deselectedCardView" destination="RWA-x6-jmI" id="0jz-sB-zh7"/>
+                                    <outlet property="selectedCardView" destination="VSw-gO-ORv" id="wyj-OX-srM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
